@@ -4,38 +4,36 @@ import javax.swing.*;
 
 public class NumeroPares {
     public static void main(String[] args) {
-        int inicio = Integer.parseInt(JOptionPane.showInputDialog(null, "Dime un número", "LLENA LOS CAMPOS",JOptionPane.QUESTION_MESSAGE));
-        int fin = Integer.parseInt(JOptionPane.showInputDialog(null, "Dime otro número", "LLENA LOS CAMPOS",JOptionPane.QUESTION_MESSAGE));
+        int inicio = Integer.parseInt(JOptionPane.showInputDialog(null, "Dime un número: ", "INGRESE UN RANGO ENTRE DOS NÚMEROS", JOptionPane.QUESTION_MESSAGE));
+        int fin = Integer.parseInt(JOptionPane.showInputDialog(null, "Dime otro número: ", "INGRESE UN RANGO ENTRE DOS NÚMEROS", JOptionPane.QUESTION_MESSAGE));
 
-        int i = inicio + 1;
         String texto = "";
+        int i = inicio + 1;
 
-
-        while(i < fin)
+        while(i <= fin)
         {
             if(i % 2 == 0)
             {
-                texto += i+"\n";
                 String proceso = "";
-                long factorial = 1;
                 int j = 1;
+                long factorial = 1;
 
                 while(j <= i)
                 {
                     factorial *= j;
                     proceso += j;
 
-                    if (j < i)
+                    if(j < i)
                     {
                         proceso += " * ";
                     }
                     j++;
                 }
                 texto += "Número: " + i + "\n";
-                texto += i + "! = " + proceso + " = " + factorial + "\n\n";
+                texto += i + "!" + " = " + proceso + " = " + factorial + "\n\n";
             }
             i++;
         }
-        JOptionPane.showMessageDialog(null, texto, "NÚMEROS PARES ENTRE DOS NÚMEROS", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, texto, "FACTORIAL DE NÚMEROS PARES", JOptionPane.INFORMATION_MESSAGE);
     }
 }
